@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>ENIGME</title>
+  <title>Énigme #3</title>
   <style>
     body {
       background-color: #0e0e0e;
@@ -13,50 +13,69 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      padding: 40px;
+      padding: 20px;
       text-align: center;
     }
-
     h1 {
-      font-size: 2.5em;
+      font-size: 2em;
       margin-bottom: 20px;
     }
-
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
+    input {
+      padding: 10px;
+      font-size: 1em;
+      width: 250px;
+      margin-bottom: 10px;
     }
-
-    .esoteric-button {
-      display: inline-block;
-      padding: 12px 20px;
-      background: linear-gradient(135deg, #1f1f1f, #4b0082);
-      color: #fff;
-      text-decoration: none;
-      font-family: 'Courier New', monospace;
-      font-size: 16px;
-      border: 2px solid #fff;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(75, 0, 130, 0.8);
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #444;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin: 5px;
     }
-
-    .esoteric-button:hover {
-      background: #4b0082;
-      color: #ffd700;
-      box-shadow: 0 0 15px #ffd700;
-      border-color: #ffd700;
+    #result {
+      margin-top: 20px;
+      white-space: pre-wrap;
+      font-size: 1.1em;
+      max-width: 600px;
     }
   </style>
 </head>
 <body>
+  <h1>Énigme 3 — Le Son Qui Inverse Les Vivants</h1>
 
-  <h1>🔍 ENIGME : Le Chant Inversé</h1>
-  <p>Un secret t'attend à l’envers des mots. Écoute…</p>
+  <input type="text" id="input" placeholder="Entrez les mots-clés">
+  <button onclick="checkAnswer()">Valider</button>
 
-  <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" class="esoteric-button">
-    &#9765; Écouter Beatles en reverse
-  </a>
+  <p>Ou bien…</p>
+  <button onclick="window.open('https://www.youtube.com/watch?v=XrnW9W9Qdes', '_blank')">
+    Écouter le message
+  </button>
 
+  <div id="result"></div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("input").value.trim().toLowerCase();
+      const result = document.getElementById("result");
+
+      if (input === "turn me on dead man") {
+        result.textContent = `"Turn me on, dead man."
+
+Mais il ne s’appelait pas Paul, ici.
+Et pourtant, il est mort lui aussi.
+Effacé des listes. Rayé des murs.
+
+Tu le croiseras peut-être.
+Si tu trouves
+la porte sans poignée, celle qui ne mène nulle part.
+Salle 0.`;
+      } else {
+        result.textContent = "Ce n'est pas la bonne réponse. Réessaie.";
+      }
+    }
+  </script>
 </body>
 </html>
