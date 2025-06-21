@@ -33,13 +33,27 @@
       color: white;
       border: none;
       cursor: pointer;
-      margin: 5px;
+      margin: 10px 0;
     }
     #result {
       margin-top: 20px;
       white-space: pre-wrap;
       font-size: 1.1em;
       max-width: 600px;
+    }
+    iframe {
+      margin-top: 20px;
+      width: 560px;
+      height: 315px;
+      border: none;
+    }
+
+    @media (max-width: 600px) {
+      iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
     }
   </style>
 </head>
@@ -49,10 +63,13 @@
   <input type="text" id="input" placeholder="Entrez les mots-clés">
   <button onclick="checkAnswer()">Valider</button>
 
-  <p>Ou bien…</p>
-  <button onclick="window.open('https://www.youtube.com/watch?v=n7QZNZx2QKA&list=RDn7QZNZx2QKA&start_radio=1&ab_channel=rjciccone')">
-    Écouter le message
-  </button>
+  <p>Ou bien écoute directement ce que tu n’as jamais entendu…</p>
+
+  <!-- ✅ LECTEUR YOUTUBE INTÉGRÉ -->
+  <iframe src="https://www.youtube.com/embed/XrnW9W9Qdes" 
+          title="Audio mystère"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
 
   <div id="result"></div>
 
