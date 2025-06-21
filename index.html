@@ -65,34 +65,16 @@
 
   <p>Ou bien écoute directement ce que tu n’as jamais entendu…</p>
 
-  <!-- ✅ LECTEUR YOUTUBE INTÉGRÉ -->
-  <iframe src="https://www.youtube.com/embed/XrnW9W9Qdes" 
-          title="Audio mystère"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+  <!-- ✅ LECTEUR YOUTUBE AVEC AUTOPLAY -->
+  <iframe 
+    src="https://www.youtube.com/embed/XrnW9W9Qdes?autoplay=1&mute=1"
+    title="Audio mystère"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
 
   <div id="result"></div>
 
   <script>
     function checkAnswer() {
-      const input = document.getElementById("input").value.trim().toLowerCase();
-      const result = document.getElementById("result");
-
-      if (input === "turn me on dead man") {
-        result.textContent = `"Turn me on, dead man."
-
-Mais il ne s’appelait pas Paul, ici.
-Et pourtant, il est mort lui aussi.
-Effacé des listes. Rayé des murs.
-
-Tu le croiseras peut-être.
-Si tu trouves
-la porte sans poignée, celle qui ne mène nulle part.
-Salle 0.`;
-      } else {
-        result.textContent = "Ce n'est pas la bonne réponse. Réessaie.";
-      }
-    }
-  </script>
-</body>
-</html>
+      const input = document.getElementById("input").valu
